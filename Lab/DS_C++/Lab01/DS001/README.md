@@ -14,7 +14,7 @@ int height, weight;     // 신장(cm), 체중(kg)
 double bmi;             // 비만도 수치
 ```
 
-===
+---
 
 input #1 : 신장(cm 단위)과 체중(kg 단위)를 표현하는 정수 2개
 ```
