@@ -5,7 +5,7 @@
 
 함수 2개 이상 제작하여 사용할 것.
 
-[hint] <string> header file을 포함하고, find_first_not_off() 함수와 find_last_not_of() 함수를 활용하라.
+hint: <string> header file을 포함하고, find_first_not_off() 함수와 find_last_not_of() 함수를 활용하라.
 
 ---
 
