@@ -1,7 +1,6 @@
-# 프로그래밍 스튜디오 DS/C++ Lab 08
-22200034 / 곽도현
+# 프로그래밍 스튜디오 DS/C++ Lab 08 
 
-### DS/C++ Lab#8 - Console Input & Output
+### DS/C++ Lab#8 - Sorting Algorithms
 - DS071. Selection sort
   ![DS071](./captures/DS071.png)
 

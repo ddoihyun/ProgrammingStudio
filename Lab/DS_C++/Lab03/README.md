@@ -1,7 +1,6 @@
-# 프로그래밍 스튜디오 DS/C++ Lab 03
-22200034 / 곽도현
+# 프로그래밍 스튜디오 DS/C++ Lab 03 
 
-### DS/C++ Lab#3 - Console Input & Output
+### DS/C++ Lab#3 - Classes
 - DS021. 성적 계산하기
   ![DS021](./captures/DS021.png)
 

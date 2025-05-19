@@ -1,7 +1,6 @@
 # 프로그래밍 스튜디오 DS/C++ Lab 07
-22200034 / 곽도현
 
-### DS/C++ Lab#7 - Console Input & Output
+### DS/C++ Lab#7 - Queue with Linked List
 - DS061. MyLLQueue 만들기
   ![DS061](./captures/DS061.png)
 

@@ -1,7 +1,6 @@
-# 프로그래밍 스튜디오 DS/C++ Lab 01
-22200034 / 곽도현
+# 프로그래밍 스튜디오 DS/C++ Lab 02
 
-### DS/C++ Lab#1 - Console Input & Output
+### DS/C++ Lab#2 - Array & Pointer
 - DS011. 입력한 수의 전체 합과 최대값 구하기
   ![DS011](./captures/DS011.png)
 

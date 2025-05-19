@@ -1,7 +1,6 @@
-# 프로그래밍 스튜디오 DS/C++ Lab 06
-22200034 / 곽도현
+# 프로그래밍 스튜디오 DS/C++ Lab 06 
 
-### DS/C++ Lab#6 - Console Input & Output
+### DS/C++ Lab#6 - Queue with array
 - DS051. MyCircularQueue 만들기
   ![DS051](./captures/DS051.png)
 

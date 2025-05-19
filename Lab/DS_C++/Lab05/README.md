@@ -1,7 +1,6 @@
 # 프로그래밍 스튜디오 DS/C++ Lab 05
-22200034 / 곽도현
 
-### DS/C++ Lab#5 - Console Input & Output
+### DS/C++ Lab#5 - Stack with Linked List
 - DS041. MyLinkedStack 만들기
   ![DS041](./captures/DS041.png)
 

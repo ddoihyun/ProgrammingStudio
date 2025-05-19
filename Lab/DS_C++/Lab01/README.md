@@ -1,7 +1,6 @@
 # 프로그래밍 스튜디오 DS/C++ Lab 01
-22200034 / 곽도현
 
-### DS/C++ Lab#1 - Console Input & Output
+### DS/C++ Lab#1 - Console Input & Output (iostream)
 - DS001. 비만 판정하기
   ![DS001](./captures/DS001.png)
 
