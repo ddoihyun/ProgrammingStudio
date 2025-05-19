@@ -1,7 +1,6 @@
 # 프로그래밍 스튜디오 Java Lab 03
-22200034 / 곽도현
 
-### Java Lab#3 - Console Input & Output
+### Java Lab#3 - Iteration (array)
 - J021. 비만인 사람은 몇 명인가?
   ![J021](./captures/J021.png)
 

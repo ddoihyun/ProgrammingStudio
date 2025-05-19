@@ -1,5 +1,4 @@
 # 프로그래밍 스튜디오 Java Lab 01
-22200034 / 곽도현
 
 ### Java Lab#1 - Console Input & Output
 - J001. 키와 몸무게로 비만도(BMI) 계산

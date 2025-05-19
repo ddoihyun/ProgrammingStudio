@@ -1,7 +1,6 @@
 # 프로그래밍 스튜디오 Java Lab 08
-22200034 / 곽도현
 
-### Java Lab#8 - Console Input & Output
+### Java Lab#8 - Interface
 - J071. 일정 관리 프로그램 ver.2
   ![J071](./captures/J071.png)
   ![J071_1](./captures/J071_1.png)

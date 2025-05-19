@@ -1,7 +1,6 @@
 # 프로그래밍 스튜디오 Java Lab 07
-22200034 / 곽도현
 
-### Java Lab#7 - Console Input & Output
+### Java Lab#7 - Collection(ArrayList)
 - J061. 단어장 프로그램 ver.1
   ![J061](./captures/J061.png)
 

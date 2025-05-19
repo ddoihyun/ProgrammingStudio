@@ -1,7 +1,6 @@
 # 프로그래밍 스튜디오 Java Lab 05
-22200034 / 곽도현
 
-### Java Lab#5 - Console Input & Output
+### Java Lab#5 - Class & Methods
 - J041. 로또 번호 만들기
   ![J041](./captures/J041.png)
 

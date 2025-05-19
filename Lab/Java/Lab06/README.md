@@ -1,7 +1,6 @@
 # 프로그래밍 스튜디오 Java Lab 06
-22200034 / 곽도현
 
-### Java Lab#6 - Console Input & Output
+### Java Lab#6 - Overriding & Overloading
 - J051. 여러 개의 암호 문자열 만들기
   ![J051](./captures/J051.png)
 

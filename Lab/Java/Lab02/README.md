@@ -1,7 +1,6 @@
 # 프로그래밍 스튜디오 Java Lab 02
-22200034 / 곽도현
 
-### Java Lab#2 - Console Input & Output
+### Java Lab#2 - Condition
 - J011. 비만 판정하기
   ![J011](./captures/J011.png)
 
