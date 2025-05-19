@@ -35,9 +35,9 @@ public class ScoreManager {
         int count = students.size();
 
         System.out.println("Subject total and average:");
-        System.out.printf("Korean: Total = %d, Avg = %.2f%n", korTotal, korTotal / (double) count);
-        System.out.printf("English: Total = %d, Avg = %.2f%n", engTotal, engTotal / (double) count);
-        System.out.printf("Math: Total = %d, Avg = %.2f%n", matTotal, matTotal / (double) count);
+        System.out.printf("Korean: Total = %d, Average = %.2f%n", korTotal, korTotal / (double) count);
+        System.out.printf("English: Total = %d, Average = %.2f%n", engTotal, engTotal / (double) count);
+        System.out.printf("Math: Total = %d, Average = %.2f%n", matTotal, matTotal / (double) count);
     }
 
     public void printStudentStats() {
@@ -61,6 +61,6 @@ public class ScoreManager {
             }
         }
 
-        System.out.printf("\nTop student: %s - Average: %.2f%n", top.getName(), top.getAvg());
+        System.out.printf("\nTop student: \n%s - Average: %.2f%n", top.getName(), top.getAvg());
     }
 }

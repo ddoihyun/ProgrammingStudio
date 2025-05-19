@@ -22,6 +22,6 @@ public class Score {
 
     @Override
     public String toString() {
-        return name + " - Total: " + sum + ", Average: " + String.format("%.2f", avg);
+        return name + " - Total = " + sum + ", Average = " + String.format("%.2f", avg);
     }
 }
