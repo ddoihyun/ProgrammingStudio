@@ -2,7 +2,9 @@
 아래 실행예를 참고하여, 1~5단계까지의 sort를 하나의 라이브러리로 만들고,
 라이브러리를 사용하여 원하는 sorting algorithm을 선택하며 하나의 수열에 대해서 정렬을 하는 프로그램을 작성해 보시오.
 
-실행 예 :
+---
+
+[실행 예] :
 ```
 1.selection 2.insertion 3.bubble 4.quick 5.merge 6.exit > 1
 Enter count : 5  

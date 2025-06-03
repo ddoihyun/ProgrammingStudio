@@ -15,7 +15,7 @@ DS061 문제에서 작성한 linked list queue library를 이용하여 원하는
 
 ---
 
-실행 예:
+[실행 예]:
 ```
 7  
 1st : 1  

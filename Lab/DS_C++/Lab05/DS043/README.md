@@ -9,14 +9,14 @@ q를 입력하면 종료된다.
 
 반드시 스택 클래스의 소스파일을 분리하고, makefile을 사용하여 프로그램을 빌드할 것.
 
-hint:
+[hint]:
 1. < 와 >가 아닌 문자는 하나씩 읽어서 stack에 넣고, 사용자가 입력한 문자열대로 출력해 본다.
 2. 커서의 위치를 기준으로 left와 right로 두 개의 스택을 생성하여 사용하고,
 새로운 문자는 left stack에 넣고, 화살표를 움직일 때는 left stack과 right stack에 push와 pop을 적절히 활용하면서 문자열을 관리한다.
 
 ---
 
-실행 예 :
+[실행 예] :
 ```
 ThisISMyStack  
 => ThisISMyStack  

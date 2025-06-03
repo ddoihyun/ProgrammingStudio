@@ -5,6 +5,8 @@ selection sort를 이용하여 오름차순으로 정렬하시오.
 참고 링크:
 https://github.com/jerry10004/PS_DS_CPP/blob/main/sort/myselectionsort_debug.cpp
 
+---
+
 input : 첫 번째 줄은 수열의 개수, 두 번째 줄은 수열
 ```
 5  

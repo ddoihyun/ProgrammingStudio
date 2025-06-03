@@ -4,7 +4,7 @@
 각 층마다 5개의 호실이 준비되어 있으며, 2인 1실로 배정된다. 1층은 남학생용, 2층은 여학생용이다.
 
 ** 제시된 코드에 대해 다음 2개의 함수를 구현하여 문제를 해결하되, 반드시 다음 사항을 준수할 것!
-소스 코드 : https://github.com/kkim-hgu/PStudio/blob/master/DS%20Labs/DS009.cpp
+[source code] : https://github.com/kkim-hgu/PStudio/blob/master/DS%20Labs/DS009.cpp
 
 *1. 배정할 호실 찾기*
     ```
@@ -32,7 +32,7 @@
    
 ---
 
-실행 예 :
+[실행 예]:
 ```
 ===========================================
 생활관 호실 배정 프로그램

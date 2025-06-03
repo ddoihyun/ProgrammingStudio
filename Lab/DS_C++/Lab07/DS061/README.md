@@ -10,7 +10,7 @@ https://github.com/jerry10004/PS_DS_CPP/blob/main/queue/queue_linkedlist.cpp
 
 ---
 
-실행 예:
+[실행 예]:
 ```
 1.enqueue 2.dequeue 3.showfront 4.showrear 5.displayQueue 6.exit > 1  
 Enter a Value: 10

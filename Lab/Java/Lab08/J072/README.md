@@ -39,11 +39,15 @@ java ChatServer
 java ChatClient <username1> <server ip address> 
 ``` 
 *예시*
+```
 java ChatClient Kim localhost
+```
 
 ### Terminal #3
 ```
 java ChatClient <username2> <server ip address>  
 ```
 *예시*  
+```
 java ChatClient Jang localhost
+```

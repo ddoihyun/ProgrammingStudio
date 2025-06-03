@@ -15,7 +15,7 @@ Product class (상품 1개의 정보를 다루는 클래스)
 
 ---
 
-실행 예:
+[실행 예]:
 ```
 1. Add 2. List 3. Quit > 1
 KIT KAT

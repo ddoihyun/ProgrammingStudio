@@ -33,7 +33,7 @@ front : 0, rear : 1
 
 ---
 
-실행 예 : 
+[실행 예] : 
 ```
 ===== Dequeue x 1 =====
 => Queue is empty !

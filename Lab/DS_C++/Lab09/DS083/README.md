@@ -11,7 +11,7 @@ Source Template : https://github.com/jerry10004/PS_DS_CPP/blob/main/binarytree/h
 
 ---
 
-실행 예
+[실행 예]: 
 ```
 1. insert 2.delete 3.print 4.quit > 1  
 new value? 3  
