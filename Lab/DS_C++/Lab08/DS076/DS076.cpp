@@ -2,99 +2,79 @@
 using namespace std;
 
 namespace SortLib {
-    void print(int *arr, int n) {
+    // 결과 출력 (공백 구분, 마지막에 개행)
+    void printPlain(int *arr, int n) {
         for (int i = 0; i < n; ++i) {
-            cout << "[" << arr[i] << "]";
-            if (i < n - 1) cout << " ";
+            cout << arr[i] << (i < n - 1 ? ' ' : '\n');
         }
-        cout << "\n";
     }
 
+    // 요소 교환
     void mySwap(int &a, int &b) {
-        int tmp = a; a = b; b = tmp;
+        int tmp = a; 
+        a = b; 
+        b = tmp;
     }
 
-    // 1) Selection Sort
+    // 1) Selection Sort (내림차순)
     void selectionSort(int *arr, int n) {
-    #ifdef DEBUG
-        print(arr, n);
-    #endif
         for (int i = 0; i < n - 1; ++i) {
-            int min_i = i;
-            for (int j = i + 1; j < n; ++j)
-                if (arr[j] < arr[min_i])
-                    min_i = j;
-            if (min_i != i) {
-                mySwap(arr[i], arr[min_i]);
+            int max_i = i;
+            for (int j = i + 1; j < n; ++j) {
+                if (arr[j] > arr[max_i])
+                    max_i = j;
             }
-        #ifdef DEBUG
-            print(arr, n);  
-        #endif
+            if (max_i != i) mySwap(arr[i], arr[max_i]);
         }
     }
 
-    // 2) Insertion Sort
+    // 2) Insertion Sort (내림차순)
     void insertionSort(int *arr, int n) {
-    #ifdef DEBUG
-        print(arr, n);
-    #endif
         for (int i = 1; i < n; ++i) {
             int key = arr[i];
             int j = i - 1;
-            while (j >= 0 && arr[j] > key) {
+            while (j >= 0 && arr[j] < key) {
                 arr[j + 1] = arr[j];
                 --j;
             }
             arr[j + 1] = key;
-        #ifdef DEBUG
-            print(arr, n);
-        #endif
         }
     }
 
-    // 3) Bubble Sort (오름차순)
+    // 3) Bubble Sort (내림차순)
     void bubbleSort(int *arr, int n) {
-    #ifdef DEBUG
-        print(arr, n);
-    #endif
         for (int i = 0; i < n - 1; ++i) {
             for (int j = 0; j < n - 1 - i; ++j) {
-                if (arr[j] > arr[j + 1]) {
+                if (arr[j] < arr[j + 1]) {
                     mySwap(arr[j], arr[j + 1]);
                 }
             }
-        #ifdef DEBUG
-            print(arr, n);
-        #endif
         }
     }
 
-    // 4) Quick Sort
-    int partition(int *arr, int low, int high, int n) {
+    // 4) Quick Sort (내림차순)
+    int partition(int *arr, int low, int high) {
         int pivot = arr[high];
         int i = low - 1;
         for (int j = low; j < high; ++j) {
-            if (arr[j] < pivot) {
+            if (arr[j] > pivot) {
                 ++i;
                 mySwap(arr[i], arr[j]);
             }
         }
         mySwap(arr[i + 1], arr[high]);
-    #ifdef DEBUG
-        print(arr, n);
-    #endif
         return i + 1;
     }
-    void quickSort(int *arr, int low, int high, int n) {
+    void quickSort(int *arr, int low, int high) {
         if (low < high) {
-            int pi = partition(arr, low, high, n);
-            quickSort(arr, low, pi - 1, n);
-            quickSort(arr, pi + 1, high, n);
+            int pi = partition(arr, low, high);
+            quickSort(arr, low, pi - 1);
+            quickSort(arr, pi + 1, high);
         }
     }
 
-    // 5) Merge Sort
-    void merge(int *arr, int l, int m, int r, int n) {
+    // 5) Merge Sort (내림차순)
+    void merge(int *arr, int l, int m, int r) {
         int n1 = m - l + 1, n2 = r - m;
         int *L = new int[n1], *R = new int[n2];
         for (int i = 0; i < n1; ++i) L[i] = arr[l + i];
@@ -102,33 +82,33 @@ namespace SortLib {
 
         int i = 0, j = 0, k = l;
         while (i < n1 && j < n2) {
-            if (L[i] <= R[j]) 
+            if (L[i] >= R[j])  // 내림차순 비교
                 arr[k++] = L[i++];
-            else              
+            else
                 arr[k++] = R[j++];
         }
         while (i < n1) arr[k++] = L[i++];
         while (j < n2) arr[k++] = R[j++];
-        delete[] L; delete[] R;
-
-    #ifdef DEBUG
-        print(arr, n);
-    #endif
+        delete[] L; 
+        delete[] R;
     }
-    void mergeSort(int *arr, int l, int r, int n) {
+    void mergeSort(int *arr, int l, int r) {
         if (l < r) {
             int m = l + (r - l) / 2;
-            mergeSort(arr, l, m, n);
-            mergeSort(arr, m + 1, r, n);
-            merge(arr, l, m, r, n);
+            mergeSort(arr, l, m);
+            mergeSort(arr, m + 1, r);
+            merge(arr, l, m, r);
         }
     }
 }
 
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
     while (true) {
         cout << "1.selection 2.insertion 3.bubble 4.quick 5.merge 6.exit > ";
-        int choice; 
+        int choice;
         if (!(cin >> choice)) break;
 
         if (choice == 6) {
@@ -141,38 +121,42 @@ int main() {
         }
 
         cout << "Enter count: ";
-        int n; cin >> n;
-        int *arr = new int[n];
+        int N;
+        cin >> N;
+
+        int *arr = new int[N];
         cout << "Enter numbers: ";
-        for (int i = 0; i < n; ++i) cin >> arr[i];
+        for (int i = 0; i < N; ++i) {
+            cin >> arr[i];
+        }
 
         switch (choice) {
             case 1:
-                cout << "==== selection sort ====\n";
-                SortLib::selectionSort(arr, n);
+                cout << "==== selection sort (desc) ====\n";
+                SortLib::selectionSort(arr, N);
                 break;
             case 2:
-                cout << "==== insertion sort ====\n";
-                SortLib::insertionSort(arr, n);
+                cout << "==== insertion sort (desc) ====\n";
+                SortLib::insertionSort(arr, N);
                 break;
             case 3:
-                cout << "==== bubble sort ====\n";
-                SortLib::bubbleSort(arr, n);
+                cout << "==== bubble sort (desc) ====\n";
+                SortLib::bubbleSort(arr, N);
                 break;
             case 4:
-                cout << "==== quick sort ====\n";
-                SortLib::quickSort(arr, 0, n - 1, n);
+                cout << "==== quick sort (desc) ====\n";
+                SortLib::quickSort(arr, 0, N - 1);
                 break;
             case 5:
-                cout << "==== merge sort ====\n";
-                SortLib::mergeSort(arr, 0, n - 1, n);
+                cout << "==== merge sort (desc) ====\n";
+                SortLib::mergeSort(arr, 0, N - 1);
                 break;
         }
 
-    #ifndef DEBUG
-        SortLib::print(arr, n);
-    #endif
+        // 결과 출력
+        SortLib::printPlain(arr, N);
         delete[] arr;
     }
+
     return 0;
 }

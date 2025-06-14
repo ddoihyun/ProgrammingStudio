@@ -1,130 +1,140 @@
-// #include <iostream>
-// using namespace std;
+#include <iostream>
+using namespace std;
 
-// class MinHeap {
-// private:
-//     int arr[30]; 
-//     int length;        // 노드 개수
+class MinHeap {
+private:
+    int arr[30];
+    int length;
 
-//     void minHeapifyDown(int root) {
-//         int smallest = root;
-//         int left = 2 * root + 1;
-//         int right = 2 * root + 2;
-        
-//         if (left < length && arr[left] < arr[smallest])
-//             smallest = left;
-//         if (right < length && arr[right] < arr[smallest])
-//             smallest = right;
-        
-//         if (smallest != root) {
-//             swap(arr[root], arr[smallest]);
-//             minHeapifyDown(smallest);
-//         }
-//     }
+    void minHeapifyUp(int idx) {
+        if (idx == 0) return;
+        int parent = (idx - 1) / 2;
+        if (arr[idx] < arr[parent]) {
+            swap(arr[idx], arr[parent]);
+            minHeapifyUp(parent);
+        }
+    }
 
-//     void minHeapifyUp(int index) {
-//         while (index > 0) {
-//             int parent = (index - 1) / 2;
-//             if (arr[parent] > arr[index]) {
-//                 swap(arr[parent], arr[index]);
-//                 index = parent;
-//             } else break;
-//         }
-//     }
+    void minHeapifyDown(int root) {
+        int smallest = root;
+        int left  = 2 * root + 1;
+        int right = 2 * root + 2;
+        if (left < length && arr[left] < arr[smallest])
+            smallest = left;
+        if (right < length && arr[right] < arr[smallest])
+            smallest = right;
+        if (smallest != root) {
+            swap(arr[root], arr[smallest]);
+            minHeapifyDown(smallest);
+        }
+    }
 
-// public:
-//     // 생성자, 소멸자
-//     MinHeap() : length(0) {}
-//     ~MinHeap() {}
+public:
+    MinHeap() : length(0) {}
+    ~MinHeap() {}
 
-//     // 값 삽입
-//     void insertKey(int value) {
-//         if (length >= 30) {
-//             cout << "Overflow: Could not insertKey" << endl;
-//             return;
-//         }
-//         arr[length++] = value;
-//         minHeapifyUp(length - 1);
-//     }
+    void buildHeap(int a[], int n) {
+        length = 0;
+        for (int i = 0; i < n; ++i) {
+            arr[length] = a[i];
+            minHeapifyUp(length);
+            ++length;
+        }
+        printHeap();
+    }
 
-//     int deleteKey() {
-//         if (length <= 0) {
-//             cout << "Could not deleteKey" << endl;
-//             return -1;
-//         }
-//         int root = arr[0];
-//         arr[0] = arr[--length];
-//         minHeapifyDown(0);
-//         return root;
-//     }
+    void insertKey(int value) {
+        if (length >= 30) {
+            cout << "Overflow: Could not insertKey\n";
+            return;
+        }
+        arr[length] = value;
+        minHeapifyUp(length);
+        ++length;
+        printHeap();
+    }
 
-//     // 최소값 확인
-//     int peek() const {
-//         if (length <= 0) {
-//             cout << "Heap is empty" << endl;
-//             return -1;
-//         }
-//         return arr[0];
-//     }
+    int deleteKey() {
+        if (length == 0) {
+            cout << "Underflow: Heap is empty\n";
+            return -1;
+        }
+        int rootVal = arr[0];
+        arr[0] = arr[length-1];
+        --length;
+        minHeapifyDown(0);
+        return rootVal;
+    }
 
-//     int size() const {
-//         return length;
-//     }
+    int peek() const {
+        if (length == 0) {
+            cout << "Heap is empty\n";
+            return -1;
+        }
+        return arr[0];
+    }
 
-//     bool isEmpty() const {
-//         return length == 0;
-//     }
+    int size() const {
+        return length;
+    }
 
-//     void buildHeap(int data[], int n) {
-//         length = (n > 30 ? 30 : n);
-//         for (int i = 0; i < length; ++i)
-//             arr[i] = data[i];
-//         for (int i = (length / 2) - 1; i >= 0; --i)
-//             minHeapifyDown(i);
-//     }
+    bool isEmpty() const {
+        return length == 0;
+    }
 
-//     void printHeap() const {
-//         cout << "minHeap => ";
-//         for (int i = 0; i < length; ++i)
-//             cout << arr[i] << " ";
-//         cout << endl;
-//     }
-// };
+    void printHeap() const {
+        cout << "minHeap => ";
+        for (int i = 0; i < length; ++i)
+            cout << arr[i] << " ";
+        cout << "\n";
+    }
+};
 
-// int main() {
-//     MinHeap h;
-//     int menu;
+int main() {
+    MinHeap heap;
+    int menu;
 
-//     while (true) {
-//         cout << "1. Array to minHeap 2.insert 3.delete 4.print 0.quit > ";
-//         cin >> menu;
+    while (true) {
+        cout << "1. Array to minHeap  2.insert  3.delete  4.print  0.quit > ";
+        cin >> menu;
 
-//         if (menu == 1) {
-//             int n;
-//             cin >> n;
-//             int data[30];
-//             for (int i = 0; i < n; ++i)
-//                 cin >> data[i];
-//             h.buildHeap(data, n);
-//         }
-//         else if (menu == 2) {
-//             int value;
-//             cin >> value;
-//             h.insertKey(value);
-//         }
-//         else if (menu == 3) {
-//             int minVal = h.deleteKey();
-//             if (minVal != -1)
-//                 cout << "min value : " << minVal << endl;
-//         }
-//         else if (menu == 4) {
-//             h.printHeap();
-//         }
-//         else if (menu == 0) {
-//             break;
-//         }
-//     }
+        if (menu == 0) {
+            cout << "bye!\n";
+            break;
+        }
 
-//     cout << "bye!" << endl;
-//     return 0;
-// }
+        switch (menu) {
+            case 1: {
+                int n;
+                cin >> n;
+                int tmp[30];
+                for (int i = 0; i < n; ++i)
+                    cin >> tmp[i];
+                heap.buildHeap(tmp, n);
+                break;
+            }
+            case 2: {
+                int v;
+                cin >> v;
+                heap.insertKey(v);
+                break;
+            }
+            case 3: {
+                if (heap.isEmpty()) {
+                    cout << "Heap is empty\n";
+                } else {
+                    int m = heap.deleteKey();
+                    cout << "min value : " << m << "\n";
+                    heap.printHeap();
+                }
+                break;
+            }
+            case 4:
+                heap.printHeap();
+                break;
+            default:
+                cout << "잘못된 입력입니다.\n";
+        }
+    }
+    return 0;
+}
